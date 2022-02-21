@@ -6,7 +6,7 @@ This strategy makes important use of volatility cones to define a trading strate
 
 Constructing the volatilty cones makes use of price data of the underlying asset. 
 
-From the price series, generate a 1-day return series. Compute an M-day volatility series by taking the rolling M-day standard deviation and annualizing it (x sqrt(252)). For each M-day volatility series we can apply a J-day rolling window where we assign a quantile to each data point. This means that over for example 100 days we might have 10 90th percentile volatilities. We can take the average and this generates the 90% percentile volatility cone for M days to expiry options. We can do this for many different percentiles and we have different boundaries that we can use for our trading strategy.
+From the price series, generate a 1-day return series. Compute an M-day volatility series by taking the rolling M-day standard deviation and annualizing it (x sqrt(252)). For each M-day volatility series we can apply a J-day rolling window where we assign a quantile to each data point. This means that over for example 100 days we might have 10 90th percentile volatilities. We can take the average (with or without weighting like exponential) and this generates the 90% percentile volatility cone for M days to expiry options. We can do this for many different percentiles and we have different boundaries that we can use for our trading strategy.
 
 We should use the adjustment factor by Hodges and Tompkins (2002) (see p. 40 of the Sinclair textbook)
 
